@@ -1,41 +1,83 @@
 
-# Задача 1
-# 1- Задайте список из нескольких чисел. Напишите программу, которая найдёт сумму элементов списка, стоящих на нечётной позиции.
-# *Пример:*
-# - [2, 3, 5, 9, 3] -> на нечётных позициях элементы 3 и 9, ответ: 12
+# # Задача 1
 
-
+# list_num = [2, 5, 7, 29, 5, 4]
+# def sum_of_num(list):
+#     sum = 0
+#     for i in range(len(list)):
+#         if i % 2 != 0:
+#             sum += list[i]
+#         else: 
+#             continue
+#     print(sum)
+# sum_of_num(list_num)
 
 # Задача 2
-#2-Напишите программу, которая найдёт произведение пар чисел списка. Парой считаем первый и последний элемент, второй и предпоследний и т.д.
-# *Пример:*
-# - [2, 3, 4, 5, 6] => [12, 15, 16];
-# - [2, 3, 5, 6] => [12, 15]
 
+# list_num = [2, 5, 7, 3, 3, 29, 5, 4]
+# list_sum = []
+# def pairs_of_numbers(list, list2):
+#     for i in range(int(len(list)/2)):
+#         inter = list[i] * list[len(list)-1-i]
+#         list2.append(inter)
+#     print (list2)
+# pairs_of_numbers(list_num, list_sum)
 
 
 # Задача 3
-# 3-Задайте список из вещественных чисел. Напишите программу, которая найдёт разницу между максимальным и минимальным 
-# значением дробной части элементов.
-# *Пример:*
-# - [1.1, 1.2, 3.1, 5.17, 10.02] => 0.18 или 18
-#  - [4.07, 5.1, 8.2444, 6.98] - 0.91 или 91
 
-
+# list_num = [1.5, 1.03, 3.16, 5.56, 10.94]
+# def multiplication_of_fractions(list):
+#     list_2 = [] 
+#     for i in list:
+#         num_2 = i - int(i)
+#         list_2.append(num_2)
+#     min = list_2[0]
+#     max = list_2[1]
+#     for i in list_2:
+#         if i < min:
+#             min = i
+#         elif i > max:
+#             max = i
+#     res = max - min
+#     return res
+# print(round(multiplication_of_fractions(list_num), 2))
+        
 
 # Задача 4
-# 4- Напишите программу, которая будет преобразовывать десятичное число в двоичное.
-# *Пример:*
-# - 45 -> 101101
-# - 3 -> 11
-# - 2 -> 10
+
+# def convert():
+#     num = int(input("Введите число в десятичной системе: "))
+#     result =  []
+#     while (num>0):
+        
+#         if num % 2 == 0:
+#             result.insert(0,"0")
+#         else: 
+#             result.insert(0,"1")
+#         num //= 2
+    
+#     a = (f"Ваше число в двоичной системе: ")   
+#     b = ("".join(result))
+#     word = a + b
+#     print (word)
+# convert()
+
 
 
 
 # Задача 5
-# 5-Задайте число. Составьте список чисел Фибоначчи, в том числе для отрицательных индексов.
-# *Пример:*
-# - для k = 8 список будет выглядеть так: [-21 ,13, -8, 5, −3, 2, −1, 1, 0, 1, 1, 2, 3, 5, 8, 13, 21] 
-# [Негафибоначчи](https://clck.ru/yWbkX.)
 
-
+# list = [0, 1]
+# num = int(input("Введите число ряда фибоначи: "))
+# def fibon(num, list):
+#     sum = 0
+#     sum_2 = 0
+#     for i in range(2,num+1):
+#         sum = list[i-2] + list[i-1]
+#         list.append(sum)
+#     for i in range(0,num):
+#         sum_2 = list[1] - list[0]
+#         list.insert(0, sum_2)
+#     print(list)
+# fibon(num,list)
